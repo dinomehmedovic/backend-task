@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "id": "f74fb16e-62b2-4af1-abed-1a0516200d1b",
+      "name": "Dining Chair",
+      "price": {
+        "amount": 429.99,
+        "currency": "SEK"
+      },
+      "stock": 4
+    },
+    {
+      "id": "014571de-30fc-4ae6-8d74-2f3641790e42",
+      "name": "Dinning Table",
+      "price": {
+        "amount": 5999.99,
+        "currency": "SEK"
+      },
+      "stock": 1
+    },
+    {
+      "id": "f1a81b04-1b4f-425a-9e74-79c2cf8a59ec",
+      "name": "Crash",
+      "price": {
+        "amount": 20,
+        "currency": "KM"
+      },
+      "stock": 2
+    },
+    {
+      "id": "7fb1bb27-c0be-41b7-9854-5bdbb7f7fff6",
+      "name": "Kuhinja",
+      "price": {
+        "amount": 20,
+        "currency": "KM"
+      },
+      "stock": 10
+    }
+  ]
+}
