@@ -3,7 +3,7 @@ import path from "path";
 import fs from "fs";
 import { createConnection } from "../src/db";
 import app from "../src/app";
-import { BaseProduct, Product } from "../src/api/products/product.interface";
+import { BaseProduct, Product } from "../src/api/products/product";
 
 const prepareTestData = () => {
   try {
@@ -67,7 +67,9 @@ describe("GET /products/:id", () => {
   it("should return status code 404 product not found for non existing id", async () => {
     const response = await request(app).get("/api/products/id-dont-exist");
     expect(response.statusCode).toBe(404);
-    expect(response.body.message).toBe("Product not found");
+    expect(response.body.message).toBe(
+      "We could not find the product that you requested"
+    );
   });
 });
 
@@ -141,5 +143,18 @@ describe("PATCH /products/:id", () => {
       .patch("/api/products/014571de-30fc-4ae6-8d74-2f3641790e42")
       .send(updatedProduct);
     expect(response.statusCode).toBe(400);
+  });
+
+  it("should return status 404 if product with given id don't exist", async () => {
+    const updatedProduct: Pick<BaseProduct, "stock"> = {
+      stock: 500,
+    };
+    const response = await request(app)
+      .patch("/api/products/id-dont-exist")
+      .send(updatedProduct);
+    expect(response.statusCode).toBe(404);
+    expect(response.body.message).toBe(
+      "We could not find the product that you requested"
+    );
   });
 });

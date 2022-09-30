@@ -1,8 +1,6 @@
-import { Product } from "../api/products/product.interface";
+import { Product, ProductFormatted } from "../api/products/product";
 
-export const productFormatter = (
-  product: Product
-): Omit<Product, "price"> & { price: string } => {
+export const productFormatter = (product: Product): ProductFormatted => {
   return {
     ...product,
     price: `${product.price.amount} ${product.price.currency}`,

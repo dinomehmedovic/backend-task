@@ -1,7 +1,7 @@
 import path from "path";
 import lowdb from "lowdb";
 import FileSync from "lowdb/adapters/FileSync";
-import { Product } from "../api/products/product.interface";
+import { Product } from "../api/products/product";
 
 type Schema = {
   products: Product[];
