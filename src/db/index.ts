@@ -9,10 +9,10 @@ type Schema = {
 
 let db: lowdb.LowdbSync<Schema>;
 
-export const createConnection = async () => {
-  const adapter = new FileSync<Schema>(
-    path.join(__dirname, "..", "db", "products.json")
-  );
+const defaultPath = path.join(__dirname, "..", "db", "products.json");
+
+export const createConnection = async (file: string = defaultPath) => {
+  const adapter = new FileSync<Schema>(file);
   db = lowdb(adapter);
 };
 
