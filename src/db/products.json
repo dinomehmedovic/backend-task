@@ -25,11 +25,38 @@
         "amount": 20,
         "currency": "KM"
       },
-      "stock": 2
+      "stock": 5
     },
     {
       "id": "7fb1bb27-c0be-41b7-9854-5bdbb7f7fff6",
       "name": "Kuhinja",
+      "price": {
+        "amount": 20,
+        "currency": "KM"
+      },
+      "stock": 10
+    },
+    {
+      "id": "f7eb896c-3a17-4682-b2c0-7a53208b320f",
+      "name": "Krevet",
+      "price": {
+        "amount": 20,
+        "currency": "KM"
+      },
+      "stock": 10
+    },
+    {
+      "id": "5e80e538-baec-4de2-bbbe-dddd108e91a6",
+      "name": "Krevet",
+      "price": {
+        "amount": 20,
+        "currency": "KM"
+      },
+      "stock": 10
+    },
+    {
+      "id": "161384de-dbcd-445f-a88d-6b8c2fa59f15",
+      "name": "Krevet 2",
       "price": {
         "amount": 20,
         "currency": "KM"
