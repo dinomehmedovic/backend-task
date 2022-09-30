@@ -12,9 +12,8 @@ export const getAll = async (req: Request, res: Response) => {
 };
 
 export const get = async (req: Request, res: Response, next: NextFunction) => {
-  const id: string = req.params.id;
-
   try {
+    const id: string = req.params.id;
     const product: ProductFormatted = await productsService.find(id);
 
     return res.status(200).send(product);
