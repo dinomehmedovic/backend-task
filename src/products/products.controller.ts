@@ -23,7 +23,7 @@ export const get = async (req: Request, res: Response) => {
         return res.status(200).send(product);
       }
   
-      res.status(404).send("product not found");
+      res.status(404).send({ message: "Product not found" });
     } catch (e: any) {
       res.status(500).send(e.message);
     }
@@ -54,7 +54,7 @@ export const update = async (req: Request, res: Response) => {
         return res.status(200).json(updatedItem);
       }
   
-      res.status(404).send("product not found");
+      res.status(404).send({ message: "Product not found" });
     } catch (e: any) {
       res.status(500).send(e.message);
     }
