@@ -1,12 +1,13 @@
 import { Request, Response } from "express";
+import { productFormatter } from "../../common/product-formatter";
 import { BaseProduct, Product } from "./product.interface";
 import { productService } from "./products.service";
 
 export const getAll = async (req: Request, res: Response) => {
   try {
-    const items = await productService.findAll();
+    const products = await productService.findAll();
 
-    res.status(200).send(items);
+    res.status(200).send(products.map((product) => productFormatter(product)));
   } catch (e: any) {
     res.status(500).send(e.message);
   }
@@ -19,7 +20,7 @@ export const get = async (req: Request, res: Response) => {
     const product: Product = await productService.find(id);
 
     if (product) {
-      return res.status(200).send(product);
+      return res.status(200).send(productFormatter(product));
     }
 
     res.status(404).send({ message: "Product not found" });
@@ -49,8 +50,8 @@ export const update = async (req: Request, res: Response) => {
     const existingProduct: Product = await productService.find(id);
 
     if (existingProduct) {
-      const updatedItem = await productService.update(id, productUpdate);
-      return res.status(200).json(updatedItem);
+      const updatedProduct = await productService.update(id, productUpdate);
+      return res.status(200).json(updatedProduct);
     }
 
     res.status(404).send({ message: "Product not found" });

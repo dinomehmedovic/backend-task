@@ -1,4 +1,4 @@
-import { getProducts } from "../db";
+import { getProducts } from "../../db";
 import { BaseProduct, Product } from "./product.interface";
 import { v4 as uuidv4 } from "uuid";
 

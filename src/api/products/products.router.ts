@@ -1,6 +1,6 @@
 import express from "express";
 import { createValidator } from "express-joi-validation";
-import { productSchema } from "../schemas/product-schema";
+import { productSchema } from "../../schemas/product-schema";
 import { productController } from "./products.controller";
 
 export const productsRouter = express.Router();
